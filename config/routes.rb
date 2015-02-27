@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :tasks do
-    post :update_order, on: :collection
+    post :update_row_order, on: :collection
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

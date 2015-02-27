@@ -1,4 +1,4 @@
 class Task < ActiveRecord::Base
   include RankedModel
-  ranks :order
+  ranks :row_order
 end

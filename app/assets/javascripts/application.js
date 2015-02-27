@@ -41,7 +41,7 @@ jQuery(function() {
         position = ui.item.index();
         return $.ajax({
           type: 'POST',
-          url: '/tasks/update_order',
+          url: '/tasks/update_row_order',
           dataType: 'json',
           data: {
             thing: {

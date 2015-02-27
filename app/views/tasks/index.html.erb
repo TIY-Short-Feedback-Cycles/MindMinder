@@ -17,7 +17,7 @@
     <% @tasks.each do |task| %>
       <tr data-item-id=<%= "#{task.id}" %> class="item">
         <td><%= task.description %></td>
-        <td><%= task.order %></td>
+        <td><%= task.row_order %></td>
         <td><%= task.due_on %></td>
         <td><%= task.complete %></td>
         <td><%= link_to 'Show', task_path(task), :class => 'btn btn-default pull-right' %></td>
