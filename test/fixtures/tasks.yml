@@ -2,18 +2,18 @@
 
 one:
   description: Do a thing
-  order: 1
+  row_order: 1
   due_on: 2015-02-26
   complete: false
 
 two:
   description: Do another thing
-  order: 2
+  row_order: 2
   due_on: 2015-01-16
   complete: true
 
 three:
   description: Tasks!
-  order: 3
+  row_order: 3
   due_on: 2015-05-05
   complete: false
