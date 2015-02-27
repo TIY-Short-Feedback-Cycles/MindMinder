@@ -4,9 +4,15 @@ class TasksController < ApplicationController
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
+    @tasks = Task.rank(:order).all
   end
 
+  def update_row_order
+    @task = Task.find(task_params[:task_id])
+    @task.order_position = task_params[:order_position]
+    @task.save
+    render nothing: true
+  end
   # GET /tasks/1
   # GET /tasks/1.json
   def show
