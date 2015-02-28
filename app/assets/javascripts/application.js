@@ -16,6 +16,10 @@
 //= require jquery-ui/effect-highlight
 //= require_tree .
 
+
+
+
+
 jQuery(function() {
   var cells, desired_width, table_width;
   if ($('#sortable').length > 0) {
@@ -44,10 +48,10 @@ jQuery(function() {
           url: '/',
           dataType: 'json',
           data: {
-            task: {
-              task_id: item_id,
-              row_order_position: position
-            }
+            // task: {
+            //   task_id: item_id,
+            //   row_order_position: position
+            // }
           }
         });
       }
