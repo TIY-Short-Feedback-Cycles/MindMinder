@@ -20,7 +20,7 @@ jQuery(function() {
   var cells, desired_width, table_width;
   if ($('#sortable').length > 0) {
     table_width = $('#sortable').width();
-    cells = $('.table').find('tr')[0].cells.length;
+    cells = $('#sortable').find('tr')[0].cells.length;
     desired_width = table_width / cells + 'px';
     $('.table td').css('width', desired_width);
     return $('#sortable').sortable({
@@ -41,11 +41,11 @@ jQuery(function() {
         position = ui.item.index();
         return $.ajax({
           type: 'POST',
-          url: '/tasks/update_row_order',
+          url: '/',
           dataType: 'json',
           data: {
-            thing: {
-              thing_id: item_id,
+            task: {
+              task_id: item_id,
               row_order_position: position
             }
           }
