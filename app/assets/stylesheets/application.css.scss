@@ -15,7 +15,8 @@
  *= require jquery-ui
   *= require jquery-ui/sortable
  */
-
+ @import "bootstrap";
+ @import "bootstrap-sprockets";
 
 
 #indent{
