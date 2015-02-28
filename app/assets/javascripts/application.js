@@ -38,13 +38,19 @@ jQuery(function() {
         var item_id, position;
         item_id = ui.item.data('item-id');
         console.log(item_id);
+        console.log(item_id.toString());
         position = ui.item.index();
+        console.log(position);
+
         return $.ajax({
           type: 'POST',
-          url: '/',
+          url: '/tasks/update_row_order',
           dataType: 'json',
           data: {
             task: {
+              // task_id: item_id,
+              // row_order_position: position
+              // id: item_id,
               task_id: item_id,
               row_order_position: position
             }
