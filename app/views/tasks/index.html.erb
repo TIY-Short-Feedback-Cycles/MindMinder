@@ -16,16 +16,19 @@
 
   <tbody>
     <% @tasks.each do |task| %>
-      <tr data-item-id=<%= "#{task.id}" %> class="item">
-        <td><%= task.description %></td>
-        <td><%= task.row_order %></td>
-        <td><%= task.id %></td>
-        <td><%= task.due_on %></td>
-        <td><%= task.complete %></td>
-        <td><%= link_to 'Show', task_path(task), :class => 'btn btn-default pull-right' %></td>
-        <td><%= link_to 'Edit', edit_task_path(task), :class => 'btn btn-default pull-right' %></td>
-        <td><%= link_to 'Destroy', task, :class => 'btn btn-default pull-right', method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        <tr data-item-id=<%= "#{task.id}" %> class="item">
+          <td><%= task.description %></td>
+          <td><%= task.row_order %></td>
+          <td><%= task.id %></td>
+          <td><%= task.due_on %></td>
+          <td> <%= form_for task, :remote => true do |f| %>
+            <%= f.check_box :complete, :class => 'submittable' %>
+            <% end %>
+            </td>
+          <td><%= link_to 'Show', task_path(task), :class => 'btn btn-default pull-right' %></td>
+          <td><%= link_to 'Edit', edit_task_path(task), :class => 'btn btn-default pull-right' %></td>
+          <td><%= link_to 'Destroy', task, :class => 'btn btn-default pull-right', method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
     <% end %>
   </tbody>
 </table>
