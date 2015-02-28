@@ -50,10 +50,10 @@ jQuery(function() {
           url: '/tasks/update_row_order',
           dataType: 'json',
           data: {
-            // task: {
-            //   task_id: item_id,
-            //   row_order_position: position
-            // }
+            task: {
+              task_id: item_id,
+              row_order_position: position
+            }
           }
         });
       }
