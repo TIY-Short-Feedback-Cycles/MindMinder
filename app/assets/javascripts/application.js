@@ -18,9 +18,12 @@
 
 
 
-
-
 jQuery(function() {
+
+  $('.submittable').click(function() {
+    $(this).parents('form:first').submit();
+  });
+
   var cells, desired_width, table_width;
   if ($('#sortable').length > 0) {
     table_width = $('#sortable').width();
@@ -60,4 +63,3 @@ jQuery(function() {
     });
   }
 });
-RunLink
