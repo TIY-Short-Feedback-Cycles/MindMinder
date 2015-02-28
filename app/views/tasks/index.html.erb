@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Tasks</h1>
+<h1>MindMinder</h1>
 
 <table id="sortable" class="table table-striped">
   <thead>
     <tr>
       <th>Description</th>
-      <th>Order</th>
-      <th>ID</th>
+      <!-- <th>Order</th>
+      <th>ID</th> -->
       <th>Due on</th>
       <th>Complete</th>
       <th colspan="3"></th>
@@ -18,8 +18,8 @@
     <% @tasks.each do |task| %>
         <tr data-item-id=<%= "#{task.id}" %> class="item">
           <td><%= task.description %></td>
-          <td><%= task.row_order %></td>
-          <td><%= task.id %></td>
+          <!-- <td><%= task.row_order %></td>
+          <td><%= task.id %></td> -->
           <td><%= task.due_on %></td>
           <td> <%= form_for task, :remote => true do |f| %>
             <%= f.check_box :complete, :class => 'submittable' %>
